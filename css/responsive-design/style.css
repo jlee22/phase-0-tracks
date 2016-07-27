@@ -26,7 +26,7 @@ body {
   display: inline-block;
   vertical-align: top;
   width: 20%;
-  padding: 2%;
+  padding: 3%;
 }
 
 
@@ -34,7 +34,7 @@ main {
   width: 50%;
   display: inline-block;
   vertical-align: top;
-  padding: 2%;
+  padding: 3%;
   min-width: 10%;
 
 }
@@ -60,3 +60,20 @@ figcaption {
 }
 
 
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: .7em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #external-links {
+    padding: 1%;
+  }
+}
