@@ -25,3 +25,8 @@ end
 puts "How old is the hamster?(years to the nearest month)"
 age = gets.chomp.to_f
 
+puts "Hamster name: #{name}"
+puts "Voume(1-10): #{volume}"
+puts "Fit for adoption: #{adoption}"
+puts "Fur color: #{color}"
+puts "Hamster age: #{age}"
