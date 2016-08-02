@@ -1,0 +1,33 @@
+Elevator algorithm:
+
+- Record the elevator direction based on initial call
+- Ask for the users to select a floor
+	- If floor selected
+		- Wait 3 seconds
+	- Otherwise: close the elevator door
+- Until reaching either the top or bottom
+	- Move towards the initial call direction, stop at the first closest selected floor and stop:
+		- Ask for users to select floor again
+			- Wait 3 seconds
+		- Otherwise: close the elevator door
+
+
+Cat feeding robot:
+
+- At 10 AM
+- Dispense 60g of dry food
+- Ring bell
+- At 2 PM
+	-If food left > 20g:
+		- Dispense 20g dry food
+		- Ring bell
+	-Otherwise:
+		- Dispense 40g dry food
+		- Ring Bell
+- At 7 PM
+	- Dispense 30g wet food
+	- Ring Bell
+- If reserve empty when trying to dispense
+	- Ring bell 3 X times
+
+
