@@ -1,0 +1,17 @@
+Elevator algorithm:
+
+- Record the elevator direction based on initial call
+- Ask for the users to select a floor
+	- If floor selected
+		- Wait 3 seconds
+	- Otherwise: close the elevator door
+- Until reaching either the top or bottom
+	- Move towards the initial call direction, stop at the first closest selected floor and stop:
+		- Ask for users to select floor again
+			- Wait 3 seconds
+		- Otherwise: close the elevator door
+
+
+
+
+
