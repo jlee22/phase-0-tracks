@@ -1,5 +1,9 @@
+puts "How many employees will be processed?"
+process = gets.chomp.to_i
+until process == 0
+
 puts "What is your name?"
-name = gets.chomp
+name = gets.chomp.downcase
 
 puts "How old are you?"
 age = gets.chomp.to_i
@@ -32,9 +36,9 @@ end
 
 
 
-if name == "Drake Cula"
+if name == "drake cula"
 	puts "Definitely a vampire."
-elsif name == "Tu Fang"
+elsif name == "tu fang"
 	puts "Definitely a vampire."
 elsif answer_year && (garlic || enroll) == true
 	puts "Probably not a vampire."
@@ -44,4 +48,6 @@ elsif !answer_year && !(garlic && enroll) == true
 	puts "Almost certainly a vampire."
 else
 	puts "Results inconclusive"
+end
+process -= 1
 end
