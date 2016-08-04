@@ -36,6 +36,31 @@ end
 
 
 
+puts "Name your allergies one at a time (input done when no more allergies to be named)" 
+allergies = gets.chomp
+if allergies == "sunshine"
+	answer_year = false
+	garlic = true
+	enroll = false
+	allergies = "done"
+elsif allergies == "done"
+	allergies == "done"
+end
+until allergies == "done"
+	puts "Name another allergy you have (input done when no more allergies to be named)"
+	allergies = gets.chomp
+	if allergies == "sunshine"
+		answer_year = false
+		garlic = true
+		enroll = false
+		allergies = "done"
+	end
+
+end
+
+
+
+
 if name == "drake cula"
 	puts "Definitely a vampire."
 elsif name == "tu fang"
@@ -49,5 +74,7 @@ elsif !answer_year && !(garlic && enroll) == true
 else
 	puts "Results inconclusive"
 end
+
+
 process -= 1
 end
