@@ -6,7 +6,9 @@
 def encrypt(string)
 	index = 0
 	while index < string.length
-		if string[index] != " "
+		if string[index] == "z"
+			string[index] = "a"
+		elsif string[index] != " "
 			string[index] = string[index].next
 		end
 		index += 1
@@ -14,7 +16,6 @@ def encrypt(string)
 	p string
 end
 
-encrypt("abc cde")
 
 def decrypt (string)
 	index = 0
@@ -29,5 +30,8 @@ def decrypt (string)
 	p string
 end
 
-decrypt ("bcd dfg")
-decrypt ("ab")
+encrypt("abc")
+encrypt("zed")
+decrypt("bcd")
+decrypt("afe")
+decrypt(encrypt("swordfish"))
