@@ -24,9 +24,7 @@ puts "What is your favorite color"
 fav_color = gets.chomp
 
 puts "What is your income per year? (nearest dollar)"
-income = gets.chomp.to_i
-
-	
+income = gets.chomp.to_i	
 
 form = {name: name, age: age,  number_of_children: children, have_pets: pets, favorite_color: fav_color, yearly_income: income}
 
@@ -35,6 +33,11 @@ mistake = gets.chomp
 if mistake != "none"
 	puts "What would you like to update the value to?"
 	new_value = gets.chomp
+	if new_value == "y"
+		new_value = true
+	elsif new_value == "n"
+		new_value = false
+	end
 	form[mistake.to_sym] = new_value
 end
 
