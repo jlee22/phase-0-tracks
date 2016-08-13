@@ -28,7 +28,26 @@ def alias_disguise (name)
 disguised_alias = disguised_last.join.capitalize + " " + disguised_first.join.capitalize
 end
 
-p alias_disguise("   ")	
+p alias_disguise("Felicia Torres")	
+
+
+
+puts "Please enter first and last name to disguise. type \"quit\" to quit"
+agent_name = gets.chomp
+
+until agent_name == "quit"
+	if agent_name == ""
+		puts "Enter another pair of first and last name to disguise. type \"quit\" to quit"
+		agent_name = gets.chomp
+	else
+		p alias_disguise(agent_name)
+		puts "Enter another pair of first and last name to disguise. type \"quit\" to quit"
+		agent_name = gets.chomp
+	end
+end
+
+
+
 
 
 
