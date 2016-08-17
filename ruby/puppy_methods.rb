@@ -17,17 +17,50 @@ class Puppy
   end
 
   def high_five(string)
-	  puts "raises #{string} paw"
+	puts "raises #{string} paw"
   end
   
+  def initialize
+  	puts "initializing new puppy instance ..."
+  end
+end
+
+class Kitten
+
+  def initialize
+  	puts "initializing a new kitten instance ..."
+  end
+
+  def meow
+  	puts "Meow!"
+  end
+
+  def hunt(animal)
+  	puts "The kitten caught a #{animal}!"
+  end
+
 end
 
 
-Husky = Puppy.new
+
+Kitten_arr = []
+50.times do |new_kitten|
+	new_kitten = Kitten.new
+	Kitten_arr << new_kitten	
+end
+
+# p Kitten_arr
+
+Kitten_arr.each do |kitten|
+	kitten.meow
+	kitten.hunt("rat")
+end
 
 
-Husky.fetch("ball")
-Husky.speak(3)
-Husky.roll_over
-p Husky.dog_years(5)
-Husky.high_five("left")
+# Husky = Puppy.new
+# Husky.fetch("ball")
+# Husky.speak(3)
+# Husky.roll_over
+# p Husky.dog_years(5)
+# Husky.high_five("left")
+
