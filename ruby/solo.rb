@@ -5,8 +5,8 @@
 # Have attr_reader and attr_accessor
 
 class Race_car
-	attr_reader :color, :top_speed, :price, :number_of_passengers
-	attr_accessor :color,:price
+	attr_reader :number_of_passengers
+	attr_accessor :color, :top_speed, :price
 
 	def initialize (color, top_speed, price)
 		@color = color
@@ -31,6 +31,62 @@ class Race_car
 		puts "Beep boop - *door opens*"
 	end
 
+	def about
+		puts "Color: #{@color}"
+		puts "Top Speed: #{@top_speed}"
+		puts "Price: #{@price}"
+		puts "Number of Passengers: #{@number_of_passengers}"
+	end	
+
+end
+
+# Release 2. In the context of my class,
+# it makes more sense to ask the user how many cars
+# they would like to create.
+race_car_collection = []
+# puts "How many race cars would you like to create?"
+# num_of_cars = gets.chomp
+
+# num_of_cars.to_i.times do {}
+
+# puts "What color would you like?"
+# 	color = gets.chomp
+# puts "How fast do you need the car to go?"
+# 	top_speed = gets.chomp.to_i
+# puts "How much will it cost?"
+# 	price = gets.chomp.to_i
+
+# race_car_collection << Race_car.new(color,top_speed,price)
+# puts "Next car:"
+# end
+
+# p race_car_collection
+
+# Loops until user is done
+user_is_done = false
+until user_is_done == true
+puts "Let's build a car!"
+puts "What color would you like?"
+	color = gets.chomp	 
+puts "How fast do you need the car to go?"
+	top_speed = gets.chomp
+puts "How much will it cost?"
+	price = gets.chomp
+race_car_collection << Race_car.new(color,top_speed.to_i,price.to_i)
+	puts "Are you done making cars? (y/n)"
+	answer = gets.chomp
+	if answer == "y"
+	user_is_done = true
+	puts "Thank you and have a nice day!"
+	elsif answer == "n"
+	user_is_done = false
+	end
+end
+
+puts "Here are the cars you made:"
+race_car_collection.length.times do |i|
+puts "Car ##{i+1}:"
+race_car_collection[i].about
 end
 
 
