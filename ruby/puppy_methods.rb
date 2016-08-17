@@ -1,66 +1,63 @@
 class Puppy
 
-  def fetch(toy)
-    puts "I brought back the #{toy}!"
-  end
+    def initialize 
+        p "Initializing new puppy instance ..."
+    end
 
-  def speak(integer) 
-  integer.to_i.times {puts "Woof!"}
-  end 	
-  
-  def roll_over
-  puts "*rolls over*"
-  end
+ def fetch(toy)
+   puts "I brought back the #{toy}!"
+   toy
+ end
 
-  def dog_years(age)
-  age.to_i * 7
-  end
+    def speak(int)
+     int.times do |i|
+         p "Woof"
+     end
+     end
 
-  def high_five(string)
-	puts "raises #{string} paw"
-  end
-  
-  def initialize
-  	puts "initializing new puppy instance ..."
-  end
+     def roll_over
+         p "*rolls over*"
+     end
+
+     def dog_years(int)
+         p int * 7
+    end
+
+    def play_dead 
+        p "*plays dead*"
+    end
 end
 
-class Kitten
+class Robot
+    def initialize 
+        p "Initializing new robot instance ..."
+    end
+    
+    def speak 
+        p "Beep Boop"
+    end
 
-  def initialize
-  	puts "initializing a new kitten instance ..."
-  end
+    def grab_item(item)
+        p "Robot grabs #{item}"
+    end
+end
 
-  def meow
-  	puts "Meow!"
-  end
+robot_array = []
 
-  def hunt(animal)
-  	puts "The kitten caught a #{animal}!"
-  end
+50.times do |i|
+    robot = Robot.new
+    robot_array << robot
+end
 
+robot_array.each do |i|
+    i.speak
+    i.grab_item("ball")
 end
 
 
-
-Kitten_arr = []
-50.times do |new_kitten|
-	new_kitten = Kitten.new
-	Kitten_arr << new_kitten	
-end
-
-# p Kitten_arr
-
-Kitten_arr.each do |kitten|
-	kitten.meow
-	kitten.hunt("rat")
-end
-
-
-# Husky = Puppy.new
-# Husky.fetch("ball")
-# Husky.speak(3)
-# Husky.roll_over
-# p Husky.dog_years(5)
-# Husky.high_five("left")
-
+# fido = Puppy.new
+# fido.fetch("ball")
+# fido.speak(3)
+# fido.roll_over
+# fido.dog_years(5)
+# fido.play_dead
