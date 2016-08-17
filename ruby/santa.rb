@@ -1,4 +1,6 @@
 class Santa
+	attr_reader :gender, :ethnicty, :reindeer_ranking, :age
+	attr_accessor :gender, :ethnicity, :reindeer_ranking, :age
 
 	def initialize(gender, ethnicity)
 		@gender = gender
@@ -33,30 +35,53 @@ class Santa
 	end
 
 	#getter methods for attributes
-	def gender
-		@gender
-	end
+	# def gender
+	# 	@gender
+	# end
 
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
-	def reindeer_ranking
-		@reindeer_ranking
-	end
+	# def reindeer_ranking
+	# 	@reindeer_ranking
+	# end
 
-	def age
-		@age
-	end
+	# def age
+	# 	@age
+	# end
 	#setter methods
 	
 end
 
-# Testing release 2
-santa = Santa.new("male","asian")
-santa.get_mad_at("Vixen")
-santa.celebrate_birthday
-santa.about
+
+
+def generate_santas(number_of_santas)
+example_genders = ["agender", "female", "bigender", "male",
+					 "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "latino", "white", "pacific islander",
+					 "native american", "asian", "other"]
+	number_of_santas.times do |santa|
+		santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+		santa.age = rand(140)
+		p santa.about
+	end
+
+end
+
+puts "How many santas would you like to generate?"
+answer = gets.chomp
+generate_santas(answer.to_i)
+
+# Testing release 2 & 3
+# santa = Santa.new("male","asian")
+# santa.get_mad_at("Vixen")
+# santa.celebrate_birthday
+# santa.about
+# santa.age = 3
+# santa.ethnicity = "hispanic"
+# santa.get_mad_at("Comet")
+# santa.about
 
 
 
