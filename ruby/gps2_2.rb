@@ -74,3 +74,32 @@ remove_item(grocery_list, "water")
 update_quantity(grocery_list, "carrots", 5)
 make_pretty(grocery_list)
 # p grocery_list
+
+# What did you learn about pseudocode from working on this challenge?
+# -Pseudocode helps me break down difficult and or lengthy challenges
+# to managable tasks. It allows for a step-by-step approach.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# - Hashes and arrays are chosen based on what real life scenarios 
+# they are trying to represent. In our challenge today, the hash structure
+# allowed us to modify the quantity (value) easily, which with arrays we
+# wouldn't be able to do as well.
+
+# What does a method return?
+# - Method returns what we want it to, typically a value after performing
+# specific tasks
+
+# What kind of things can you pass into methods as arguments?
+# - Methods in ruby can pretty much take in any object, so int, string,
+# data structures, booleans, etc.
+
+# How can you pass information between methods?
+# - For this assignment, we had methods return a value that we use as
+# arguments in another method.
+
+# What concepts were solidified in this challenge, 
+# and what concepts are still confusing?
+# - We solidified the concept of modifying hashes, running iterations,
+# and implicit return. We also learned about refactoring and workflow.
+# - We do not know all the ways to answer the challenge presented, we simply
+# did what worked and what made the code readable to our understanding.
