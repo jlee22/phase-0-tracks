@@ -48,21 +48,21 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
+    
 
     if @population_density >= 200
-      speed += 0.5
+      puts " and will spread across the state in half a month.\n\n"
     elsif @population_density >= 150
-      speed += 1
+      puts " and will spread across the state in a month.\n\n"
     elsif @population_density >= 100
-      speed += 1.5
+      puts " and will spread across the state in a month and a half.\n\n"
     elsif @population_density >= 50
-      speed += 2
+      puts " and will spread across the state in two months.\n\n"
     else
-      speed += 2.5
+      puts " and will spread across the state in two and a half months.\n\n"
     end
 
-    puts " and will spread across the state in #{speed} months.\n\n"
+    
 
   end
 
