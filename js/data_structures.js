@@ -8,7 +8,6 @@ horse_name.push("Joe")
 //ex: {'Ed':'blue'....}
 
 
-
 function combine_array(array1,array2) {
 	var hash_new={}
 	for (i=0;i < array1.length; i++) {
