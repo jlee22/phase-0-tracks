@@ -27,7 +27,7 @@ for (var i = 0; i < array.length; i++)
 // }
 
 
-function matching_pair (hash1, hash2) {
+function matching_pair(hash1, hash2) {
 for (var i = 0; i < Object.getOwnPropertyNames(hash2).length; i++) {
 
 	for (var j = 0; j < Object.getOwnPropertyNames(hash1).length; j++) {
@@ -42,8 +42,28 @@ for (var i = 0; i < Object.getOwnPropertyNames(hash2).length; i++) {
 return false;
 }
 
-// obj = {name: "Steven", age: 54}
-// console.log(Object.getOwnPropertyNames(obj)[1]+obj[Object.getOwnPropertyNames(obj)[1]])
+//creates a string with length as the argument
+function generate_string(length){
+    var text = "";
+    var charset = "abcdefghijklmnopqrstuvwxyz";
+    
+    for( var i=0; i < length; i++ )
+        text += charset.charAt(Math.floor(Math.random() * charset.length));
+    
+    return text;
+}
+
+function build_array(int) {
+	var array = []
+	for (var i = 0; i < int; i++) {
+	//generates string with the length between 1 and 10
+	//pushes the generated string into the existing array				  			
+ 	array.push(generate_string(Math.floor(Math.random() * 10 + 1)))
+	}
+	
+	return array;
+}
+
 
 
 
@@ -66,3 +86,14 @@ console.log(matching_pair({height: 20, name: "Steven"},{name: "Tamir", age: 54, 
 // //expects false
 
 
+//driver for generating arrays
+console.log(build_array(5))
+//generates an array with 5 strings
+
+for (var i = 0; i < 10; i++) {
+	var new_arrays = build_array(3)
+	console.log("Generating new array of 3 strings...")
+	console.log(new_arrays)
+	var selected_strings = select_longest(new_arrays)
+	console.log("The longest string from the array is:" + selected_strings)
+}
