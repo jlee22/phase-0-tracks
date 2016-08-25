@@ -34,3 +34,6 @@ function Car(model, four_wheel_drive, top_speed) {
 var new_car = new Car("Honda_Civic", false, 150);
 console.log(new_car);
 new_car.accelerate();
+var new_car2 = new Car("Jeep_Wrangler", true, 120);
+console.log(new_car2);
+new_car2.accelerate();
