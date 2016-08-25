@@ -37,3 +37,9 @@ new_car.accelerate();
 var new_car2 = new Car("Jeep_Wrangler", true, 120);
 console.log(new_car2);
 new_car2.accelerate();
+
+// Release 3
+// 1. for (var i = 0, i < object.length, i++) for example
+// 2. pro: it is quicker to create multiple objects with similar attributes
+//	  con: it could be faster to just make the object 
+//         directly instead of making the constructor first.
