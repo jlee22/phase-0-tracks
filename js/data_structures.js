@@ -21,3 +21,16 @@ return hash_new;
 // console.log(color)
 // console.log(horse_name)
 console.log(combine_array(horse_name,color))
+
+
+function Car(model, four_wheel_drive, top_speed) {
+	this.model = model;
+	this.four_wheel_drive = four_wheel_drive;
+	this.top_speed = top_speed
+
+	this.accelerate = function() {console.log("This car has accelerated to " + top_speed + " MPH")};
+}
+
+var new_car = new Car("Honda_Civic", false, 150);
+console.log(new_car);
+new_car.accelerate();
