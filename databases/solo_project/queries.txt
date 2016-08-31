@@ -37,3 +37,21 @@ DELETE FROM customers WHERE name="Zoe";
 
 RELEASE 3:
 
+sqlite> SELECT customers.name, dishes.name FROM customers INNER JOIN dishes ON customers.dish_id=dishes.id;
+Larry|Vegetable Stew
+Lisa|Braised Lamb
+Joseph|Vegetable Stew
+Alice|Braised Lamb
+Benny|Braised Lamb
+Albert|Vegetable Stew
+
+
+sqlite> SELECT soldiers.name, companies.name FROM soldiers LEFT JOIN companies ON soldiers.age=companies.id;
+John|
+Louis|
+Mark|
+Joe|
+Kevin|
+Matthew|
+sqlite>
+
