@@ -1,0 +1,57 @@
+RELEASE 2:
+
+1.
+SELECT * FROM customers, dishes WHERE customers.dish_id = dishes.id;
+1|Larry|true|2|2|Vegetable Stew
+2|Lisa|false|1|1|Braised Lamb
+3|Joseph|false|2|2|Vegetable Stew
+4|Alice|false|3|3|Fried Cod
+5|Benny|false|3|3|Fried Cod
+6|Zoe|false|1|1|Braised Lamb
+7|Albert|true|2|2|Vegetable Stew
+
+2.
+SELECT * FROM customers, dishes WHERE customers.dish_id = dishes.id;
+
+3.
+1|Larry|true|2|2|Vegetable Stew
+2|Lisa|false|1|1|Braised Lamb
+3|Joseph|true|2|2|Vegetable Stew
+4|Alice|false|1|1|Braised Lamb
+5|Benny|false|1|1|Braised Lamb
+6|Zoe|false|1|1|Braised Lamb
+7|Albert|true|2|2|Vegetable Stew
+
+4.
+SELECT customers.vegetarian, dishes.name FROM customers JOIN dishes ON customers.dish_id = dishes.id;
+true|Vegetable Stew
+false|Braised Lamb
+true|Vegetable Stew
+false|Fried Cod
+false|Fried Cod
+false|Braised Lamb
+true|Vegetable Stew
+
+5.
+DELETE FROM customers WHERE name="Zoe";
+
+RELEASE 3:
+
+sqlite> SELECT customers.name, dishes.name FROM customers INNER JOIN dishes ON customers.dish_id=dishes.id;
+Larry|Vegetable Stew
+Lisa|Braised Lamb
+Joseph|Vegetable Stew
+Alice|Braised Lamb
+Benny|Braised Lamb
+Albert|Vegetable Stew
+
+
+sqlite> SELECT soldiers.name, companies.name FROM soldiers LEFT JOIN companies ON soldiers.age=companies.id;
+John|
+Louis|
+Mark|
+Joe|
+Kevin|
+Matthew|
+sqlite>
+
