@@ -13,6 +13,7 @@ create_table = <<-SQL
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
 	email VARCHAR(255),
+	phone INTEGER,
 	company VARCHAR(255),		
 	address VARCHAR(255),
 	city VARCHAR(255),
@@ -23,21 +24,21 @@ SQL
 db.execute("DROP TABLE cards;")
 db.execute(create_table)
 
-def create_business_cards(db, name, email, company, address, city, state, zip)
-	db.execute("INSERT INTO cards (name, email, company, address, city, state, zip) VALUES (?, ? ,?, ?, ?, ?, ?)", [name, email, company, address, city, state, zip])
+def create_business_cards(db, name, email, phone, company, address, city, state, zip)
+	db.execute("INSERT INTO cards (name, email, phone, company, address, city, state, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [name, email, phone, company, address, city, state, zip])
 end
 
 #User Interface
 puts "How many cards would you like to make?"
 answer = gets.chomp
 answer.to_i.times do 
-	create_business_cards(db, Faker::Name.name, Faker::Internet.email, Faker::Company.name, Faker::Address.street_address, Faker::Address.city, "California", Faker::Address.zip_code)
+	create_business_cards(db, Faker::Name.name, Faker::Internet.email, Faker::PhoneNumber.phone_number, Faker::Company.name, Faker::Address.street_address, Faker::Address.city, "California", Faker::Address.zip_code)
 end
 
 #Output
 puts "Here are your generated cards:"
 cards = db.execute("SELECT * FROM cards;")
 cards.each do |card|
-	puts "Name: #{card['name']}, Email:#{card['email']}, Company Name:#{card['company']}, Street Address:#{card['address']}, City:#{card['city']}, State:#{card['state']}, Zip:#{card['zip']}"
+	puts "Name: #{card['name']}, Email:#{card['email']}, Phone Number:#{card['phone']}, Company Name:#{card['company']}, Street Address:#{card['address']}, City:#{card['city']}, State:#{card['state']}, Zip:#{card['zip']}"
 end
 
