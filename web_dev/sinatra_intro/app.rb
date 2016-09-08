@@ -46,10 +46,12 @@ get '/students/:id' do
   student.to_s
 end
 
+#1
 get '/contact' do
   "Address: <br> 1234 Birch St Unit 15, <br>Bobtown, CA 12345"
 end
 
+#2
 get '/great_job' do
     name = params[:name]
     if name
@@ -59,7 +61,20 @@ get '/great_job' do
     end
 end
  
-
+#3
 get '/:number_1/+/:number_2' do
   "#{params[:number_1]} + #{params[:number_2]} = #{params[:number_1].to_i+params[:number_2].to_i}"
+end
+
+#4 bonus - Select all students at a certain campus and return the results
+get '/students_campus/:campus' do
+
+  student = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+
+  response = ""
+  student.each do |student|
+    response << "#{student['name']}<br>"
+  end
+  "These students are from #{params[:campus]}: <br><br> #{response}"
+
 end
