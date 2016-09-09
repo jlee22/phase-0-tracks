@@ -14,8 +14,13 @@ review_db.results_as_hash = true
 
 # show students on the home page
 get '/' do
-  @students = db.execute("SELECT * FROM students")
+  @students = db.execute("SELECT * FROM students")  
   erb :home
+end
+
+get '/results' do
+	@reviews = review_db.execute("SELECT * FROM reviews")
+	erb :student_reviews
 end
 
 get '/students/new' do
@@ -23,18 +28,15 @@ get '/students/new' do
 end
 
 
-# get '/review' do
-# 	@students = db.execute("SELECT * FROM students")
-# 	erb :new_template
-# end
 
-get '/students/review/form' do
+get '/students/review_form' do
 	erb :review_form
 end
 
-post '/reviews' do
- 	review_db.execute("INSERT INTO reviews (comment) VALUES (?)", [params['comment']])
-  	redirect '/review'
+post '/students/reviews' do
+	
+ 	review_db.execute("INSERT INTO reviews (name, comment) VALUES (?, ?)",[params['name'], params['comment']])
+  	redirect '/results'
 end
 
 # create new students via
